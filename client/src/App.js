@@ -16,6 +16,7 @@ class App extends React.Component {
     return(
       <Router>
         <Switch>
+
           <Route exact path="/" 
             render={(routeProps) => {
               return (
@@ -25,6 +26,7 @@ class App extends React.Component {
               )
             }} 
           />
+
           <Route exact path="/standard" 
             render={(routeProps) => (
               <StandardHomePage
@@ -32,7 +34,9 @@ class App extends React.Component {
               />
             )} 
           />
+
           <Route component={Page404} />
+          
         </Switch>
       </Router>
     )

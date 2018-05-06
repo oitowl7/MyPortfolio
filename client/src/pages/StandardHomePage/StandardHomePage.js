@@ -1,13 +1,17 @@
-import React from 'react';
-import {  } from 'semantic-ui-react';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch, /*Redirect*/ } from "react-router-dom";
+// import API from "./utils/API";
 
 class StandardHomePage extends React.Component {
+
+  state = {
+    
+  };
+
   render() {
-    return (
-      <div className="Messenger">
-        <span>This is the home page</span>     
-      </div>    
-    );
+    return(
+      <span>This is the standard home page yo</span>
+    )
   }
 }
 
