@@ -1,7 +1,7 @@
 {
-  "name": "studii-app",
+  "name": "jordansportfolio",
   "version": "1.0.0",
-  "description": "Studii...With Buddiis",
+  "description": "Portfolio...for Jordan",
   "private": true,
   "proxy": "http://localhost:5000/",
   "dependencies": {
