@@ -22,7 +22,7 @@ class App extends React.Component {
           <Route exact path="/" 
             render={(routeProps) => {
               return (
-                <Question
+                <StandardHomePage
                 // facebook_id={this.state.facebook_id}
                 />
               )
