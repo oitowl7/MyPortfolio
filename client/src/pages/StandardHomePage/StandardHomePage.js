@@ -11,7 +11,8 @@ class StandardHomePage extends React.Component {
   state = {
     activePage: "Standard",
     activeMenuItem: "Top",
-    menuColor: "blue",
+    primaryColor: "blue",
+    secondaryColor: "white",
     tableColor: "#2185D0"
   };
 
@@ -30,8 +31,9 @@ class StandardHomePage extends React.Component {
           activePage={this.state.activePage}
           handleMenuClick={this.handleMenuClick}
           activeMenuItem={this.state.activeMenuItem}
-          menuColor={this.state.menuColor}
+          primaryColor={this.state.primaryColor}
           handleChangeTheme={this.handleChangeTheme}
+          secondaryColor={this.state.secondaryColor}
         />
         <StandardTopImage />
         <div></div>

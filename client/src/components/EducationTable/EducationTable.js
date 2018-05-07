@@ -10,7 +10,7 @@ const EducationTable = props => {
       <Table style={{backgroundColor: "", color: props.tableColor }}>
         <Table.Header>
           <Table.Row>
-            <Table.HeaderCell width={4}>Name</Table.HeaderCell>
+            <Table.HeaderCell width={4}>Name/Location</Table.HeaderCell>
             <Table.HeaderCell width={8}>Degree/Reason For Attending</Table.HeaderCell>
             <Table.HeaderCell width={4}>Years of Attendance</Table.HeaderCell>
           </Table.Row>
@@ -24,7 +24,7 @@ const EducationTable = props => {
           </Table.Row>
           <Table.Row>
             <Table.Cell>Belevue College<br></br>Bellevue, WA</Table.Cell>
-            <Table.Cell>Pre-requsites for physical therapy; was planning on studying abroad but the U.S. changed its accredation rules and I had to attend a U.S. doctoral program to become a physical therapist in the U.S., so that plan was put on hold and ultimately scrapped. I also worked nearly full time at a Best Buy, which accounts for the gap in employment seen later.</Table.Cell>
+            <Table.Cell>Pre-requsites for physical therapy; was planning on studying abroad but the U.S. changed its accredation rules and I had to attend a U.S. doctoral program to become a physical therapist in the U.S. and I didn't want to pay for U.S. grad school</Table.Cell>
             <Table.Cell style={{fontStyle: "italic"}}>2014-2015</Table.Cell>
           </Table.Row>
           <Table.Row>

@@ -8,7 +8,8 @@ class ComicsHomePage extends React.Component {
   state = {
     activePage: "Comics",
     activeMenuItem: "Top",
-    menuColor: "red",
+    primaryColor: "red",
+    secondaryColor: "yellow",
   };
 
   handleMenuClick = value => {
@@ -27,8 +28,9 @@ class ComicsHomePage extends React.Component {
           activePage={this.state.activePage}
           handleMenuClick={this.handleMenuClick}
           activeMenuItem={this.state.activeMenuItem}
-          menuColor={this.state.menuColor}
+          primaryColor={this.state.primaryColor}
           handleChangeTheme={this.handleChangeTheme}
+          secondaryColor={this.state.secondaryColor}
         />
       </div>
     )

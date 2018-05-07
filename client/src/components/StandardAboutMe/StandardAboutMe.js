@@ -42,6 +42,7 @@ const style = {
   },
   header: {
     color: "white" ,
+    marginTop: 30
   }
 };
 
