@@ -15,8 +15,8 @@ class StarWarsPage extends React.Component {
     this.setState({activeMenuItem: value})
   }
 
-  hanldeChangeTheme = value => {
-    
+  handleChangeTheme = value => {
+    window.location = `/${value}`
   }
 
   render() {
@@ -28,6 +28,7 @@ class StarWarsPage extends React.Component {
           handleMenuClick={this.handleMenuClick}
           activeMenuItem={this.state.activeMenuItem}
           menuColor={this.state.menuColor}
+          handleChangeTheme={this.handleChangeTheme}
         />
       </div>
     )
