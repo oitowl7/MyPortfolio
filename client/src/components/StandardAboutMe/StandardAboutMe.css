@@ -1,0 +1,35 @@
+#aboutMe{
+  min-height: 400;
+  display: flex;
+  align-items: center;
+  color: #EEEEEE;
+  background-color: #02647B;
+  padding-top: 25px;
+}
+
+.ui {
+  font-family: MyWebFont !important;
+}
+
+body {
+  background-color: #02647B
+}
+
+
+@media only screen and (min-width: 800px) {
+  h1 {
+    font-size: 70px !important;
+  }
+  h2 {
+    font-size: 50px !important;
+  }
+  h3 {
+    font-size: 35px !important;
+  }
+  h4 {
+    font-size: 25px !important;
+  }
+  h5 {
+    font-size: 15px !important;
+  }
+}

@@ -1,48 +1,42 @@
 import React from 'react';
 import { /* BrowserRouter as Router, Route, Switch, Redirect, Link*/ } from "react-router-dom";
-import { Container, Header, Grid, Table } from 'semantic-ui-react';
+import { Container, Header, Grid, Table, List } from 'semantic-ui-react';
 import EducationTable from "../EducationTable";
 import WorkExperienceTable from "../WorkExperienceTable";
+import "./StandardAboutMe.css";
 
 const StandardAboutMe = props => {
   return (
-    <div style={style.background} id="aboutMe">
-      <Container textAlign="center">
-          <Header as="h1" style={style.header}>
-            About Me
-          </Header>
-          <Header as="h3" style={style.header}>
-            My name is Jordan Shear. Thank you for visiting my standard portfolio page. I am endevouring to becoming a full stack web developer. I currently work in civil engineering as my day job but at night I develop web pages....like the one you are looking at right now. This page will serve as a fancier resume, as well as a showcase for my pages and pet projects for the world to see and critique. I currently live in Richmond, VA and would like to continue living here. It is truly one of the best cities I've ever been in.
-          </Header>
+    <div id="aboutMe">
+      <Container >
+        <Header as="h2"  style={{color: props.secondaryColor}}>
+          About Me
+        </Header>
+        {/* <List bulleted style={{color: props.secondaryColor}}>
+          <List.Item as="h4">  Current LiDAR technician becoming a full-stack developer</List.Item>
+          <List.Item as="h4">  Recent graduate of University of Richmond's 6 month coding bootcamp</List.Item>
+          <List.Item as="h4">  Resident of Richmond, VA and loving every second of it</List.Item>
+        </List> */}
+        <Header as="h4" style={{color: props.secondaryColor}}>I am a recent graduate of the University of Richmond Coding Bootcamp. I currently work in the Civil Engineering field, but I want to develop your next website project. Whether you are looking for a freelancer to make your blog or a web development company working on huge projects, I'm your huckleberry.</Header>
 
-          <EducationTable
-            tableColor={props.tableColor}
-          />
-          <WorkExperienceTable
-            tableColor={props.tableColor}
-          />
-
-
-
-
-
+        <EducationTable
+          primaryColor={props.primaryColor}
+          tertiaryColor={props.tertiaryColor}
+          secondaryColor={props.secondaryColor}
+        />
+        <WorkExperienceTable
+          primaryColor={props.primaryColor}
+          tertiaryColor={props.tertiaryColor}
+          secondaryColor={props.secondaryColor}
+        />
       </Container>
     </div>
   );
 }
 
 const style = {
-  background: {
-    minHeight: 400,
-    display: "flex",
-    alignItems: "center",
-    marginTop: "40%",
-    color: "#EEEEEE",
-    backgroundColor: "#2185D0"
-  },
   header: {
-    color: "white" ,
-    marginTop: 30
+    color: "#FFDF80" ,
   }
 };
 

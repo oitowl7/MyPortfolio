@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'MyWebFont';
+  src: url('../../fonts/OpenSans-Regular.ttf')
+}
+
+body {
+  font-family: "MyWebFont" !important;
+}
+

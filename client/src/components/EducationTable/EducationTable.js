@@ -4,19 +4,18 @@ import { Header, Table } from 'semantic-ui-react';
 
 const EducationTable = props => {
   return (
-    <div style={{marginTop: 20}}>
-      <Header as="h2" style={{color: "white"}}>Education</Header>
-
-      <Table style={{backgroundColor: "", color: props.tableColor }}>
+    <div style={{marginTop: 60}}>
+      <Header as="h3" style={{color: props.secondaryColor}}>Education</Header>
+      <Table style={{backgroundColor: props.secondaryColor, color: props.tableColor }}>
         <Table.Header>
           <Table.Row>
-            <Table.HeaderCell width={4}>Name/Location</Table.HeaderCell>
-            <Table.HeaderCell width={8}>Degree/Reason For Attending</Table.HeaderCell>
-            <Table.HeaderCell width={4}>Years of Attendance</Table.HeaderCell>
+            <Table.HeaderCell width={4} style={{backgroundColor: props.secondaryColor, color: "#02647B"}}>Name/Location</Table.HeaderCell >
+            <Table.HeaderCell width={8} style={{backgroundColor: props.secondaryColor, color: "#02647B"}}>Degree/Reason For Attending</Table.HeaderCell>
+            <Table.HeaderCell width={4} style={{backgroundColor: props.secondaryColor, color: "#02647B"}}>Years of Attendance</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
 
-        <Table.Body>
+        <Table.Body  style={{backgroundColor: props.secondaryColor, color: props.primaryColor }}>
           <Table.Row>
             <Table.Cell>Oregon Institute of Technology<br></br>Klamath Falls, OR</Table.Cell>
             <Table.Cell>B.S. in Geomatics, originally started in Electrical Engineering but I couldn't do the programming (irony!)</Table.Cell>
