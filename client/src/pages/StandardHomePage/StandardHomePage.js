@@ -74,12 +74,12 @@ class StandardHomePage extends React.Component {
           <Divider style={{color: this.state.secondaryColor}}/>
           <Divider style={{color: this.state.secondaryColor}}/>
         </Container>
-        <StandardPortfolio
+        {/* <StandardPortfolio
           primaryColor={this.state.primaryColor}
           tertiaryColor={this.state.tertiaryColor}
           secondaryColor={this.state.secondaryColor}
           displayModal={this.displayModal}
-        />
+        /> */}
         <StandardModal
           primaryColor={this.state.primaryColor}
           tertiaryColor={this.state.tertiaryColor}
