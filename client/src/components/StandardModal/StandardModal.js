@@ -185,7 +185,7 @@ const StandardPortfolioCard = props => {
                   <Header as="h4" style={style.secondary} >Studii</Header>
 
                   <Modal trigger={
-                    <Image circular style={style.imageCenter} name={card.title} src="../images/local/main.png" size="medium" />
+                    <Image circular style={style.imageCenter} name={card.title} src="../images/standard/top.jpg" size="medium" />
                   }>
                     <Modal.Header>{card.title}</Modal.Header>
                     <Modal.Content tab>
