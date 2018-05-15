@@ -94,7 +94,7 @@ const StandardPortfolioCard = props => {
 };
   return (
     <div id="portfolio">
-      <Container style={{backgroundColor: props.primaryColor, color: props.secondaryColor}}>
+      {/* <Container style={{backgroundColor: props.primaryColor, color: props.secondaryColor}}>
         <Header as="h2" style={style.secondary}>Portfolio</Header><br></br>
         <Grid>
           <Grid.Row columns={3} divided>
@@ -103,11 +103,11 @@ const StandardPortfolioCard = props => {
                 <Header as="h4" style={style.secondary} >Trivia Game</Header>
 
                 <Modal trigger={
-                  <Image circular style={style.imageCenter} name="triviaGame" src="/images/trivia/0.jpg" size="medium" />
+                  <Image circular style={style.imageCenter} name="triviaGame" src="../images/trivia/main.jpg" size="medium" />
                 }>
                   <Modal.Header>Select a Photo</Modal.Header>
                   <Modal.Content image>
-                    <Image wrapped size='medium' src='/images/trivia/0.jpg' />
+                    <Image wrapped size='medium' src='../images/trivia/main.jpg' />
                     <Modal.Description>
                       <Header>Default Profile Image</Header>
                       <p>We've found the following gravatar image associated with your e-mail address.</p>
@@ -125,11 +125,11 @@ const StandardPortfolioCard = props => {
                 <Header as="h4" style={style.secondary} >Local</Header>
 
                 <Modal trigger={
-                  <Image circular style={style.imageCenter} name="local" src="/images/local/0.png" size="medium" />
+                  <Image circular style={style.imageCenter} name="local" src="/images/local/main.png" size="medium" />
                 }>
                   <Modal.Header>Select a Photo</Modal.Header>
                   <Modal.Content image>
-                    <Image wrapped size='medium' src='/images/local/0.png' />
+                    <Image wrapped size='medium' src='/images/local/main.png' />
                     <Modal.Description>
                       <Header>Default Profile Image</Header>
                       <p>We've found the following gravatar image associated with your e-mail address.</p>
@@ -147,11 +147,11 @@ const StandardPortfolioCard = props => {
                 <Header as="h4" style={style.secondary} >Studii</Header>
 
                 <Modal trigger={
-                  <Image circular style={style.imageCenter} name="studii" src="/images/studii/0.png" size="medium" />
+                  <Image circular style={style.imageCenter} name="studii" src="/images/studii/main.png" size="medium" />
                 }>
                   <Modal.Header>Select a Photo</Modal.Header>
                   <Modal.Content image>
-                    <Image wrapped size='medium' src='/images/studii/0.png' />
+                    <Image wrapped size='medium' src='/images/studii/main.png' />
                     <Modal.Description>
                       <Header>Default Profile Image</Header>
                       <p>We've found the following gravatar image associated with your e-mail address.</p>
@@ -164,7 +164,7 @@ const StandardPortfolioCard = props => {
             </Grid.Column>
           </Grid.Row>
         </Grid>
-      </Container>
+      </Container> */}
 
 
 
