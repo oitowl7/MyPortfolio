@@ -6,7 +6,7 @@ const cardData = [
   {
     title: "Trivia Game",
     technologiesUsed: "HTML5, CSS3, Javascript, jQuery",
-    photo: "/images/trivia/0.jpg",
+    photo: "../images/trivia/main.jpg",
     tasks: [
       "Create a trivia game that shows one question at a time to a player who must answer it before the timer runs out, which is reset upon the question being answered.", 
       "If the player selects the right answer, show a screen congratulating them on how amazing they are.",
@@ -37,7 +37,7 @@ const cardData = [
     title: "Local",
     purpose: "To find the best restaurants in specific geographic neighborhoods around Richmond (and potentially beyond), therefore living like a local",
     technologiesUsed: "HTML5, CSS3, Javascript, jQuery, google places api",
-    photo: "/images/local/0.png",
+    photo: "../images/local/main.png",
     tasks: ["these", "are", "tasks"],
     methods: ["These", "are", "methods"],
     challenges: ["These", "are", "challenges"],
@@ -49,10 +49,10 @@ const cardData = [
     ]
   },
   {
-    title: "Local",
+    title: "studii",
     purpose: "To find the best restaurants in specific geographic neighborhoods around Richmond (and potentially beyond), therefore living like a local",
     technologiesUsed: "HTML5, CSS3, Javascript, jQuery, google places api",
-    photo: "/images/local/0.png",
+    photo: "../images/local/main.png",
     tasks: ["these", "are", "tasks"],
     methods: ["These", "are", "methods"],
     challenges: ["These", "are", "challenges"],
