@@ -6,10 +6,10 @@ import "./StandardTopImage.css"
 const StandardTopImage = props => {
   return (
     <div id="topOfPage">
-    {/* <Image 
+    <Image 
       src="../images/standard/top.jpg"
       style={style.image}
-    /> */}
+    />
     <div style={style.container}>
         <Container  textAlign="center">
           <Header as="h1" style={{marginTop: "20%", color: "#3A3B3A"}}>Jordan Shear</Header>

@@ -6,7 +6,7 @@ const cardData = [
   {
     title: "Trivia Game",
     technologiesUsed: "HTML5, CSS3, Javascript, jQuery",
-    photo: "../images/trivia/main.jpg",
+    photo: "../images/Trivia/main.jpg",
     tasks: [
       "Create a trivia game that shows one question at a time to a player who must answer it before the timer runs out, which is reset upon the question being answered.", 
       "If the player selects the right answer, show a screen congratulating them on how amazing they are.",
@@ -27,40 +27,40 @@ const cardData = [
       "https://oitowl7.github.io/trivia-game/"
     ],
     images: [
-      "/images/trivia/page.jpg",
-      "/images/trivia/results.jpg",
-      "/images/trivia/challenges.jpg",
-      "/images/trivia/links.jpg"
+      "/images/Trivia/page.jpg",
+      "/images/Trivia/results.jpg",
+      "/images/Trivia/challenges.jpg",
+      "/images/Trivia/links.jpg"
     ]
   },
   {
     title: "Local",
     purpose: "To find the best restaurants in specific geographic neighborhoods around Richmond (and potentially beyond), therefore living like a local",
     technologiesUsed: "HTML5, CSS3, Javascript, jQuery, google places api",
-    photo: "../images/local/main.png",
+    photo: "../images/Local/main.png",
     tasks: ["these", "are", "tasks"],
     methods: ["These", "are", "methods"],
     challenges: ["These", "are", "challenges"],
     links: [
-      "/images/trivia/page.jpg",
-      "/images/trivia/results.jpg",
-      "/images/trivia/challenges.jpg",
-      "/images/trivia/links.jpg"
+      "/images/Trivia/page.jpg",
+      "/images/Trivia/results.jpg",
+      "/images/Trivia/challenges.jpg",
+      "/images/Trivia/links.jpg"
     ]
   },
   {
     title: "studii",
     purpose: "To find the best restaurants in specific geographic neighborhoods around Richmond (and potentially beyond), therefore living like a local",
     technologiesUsed: "HTML5, CSS3, Javascript, jQuery, google places api",
-    photo: "../images/local/main.png",     
+    photo: "../images/Studii/main.png",     
     tasks: ["these", "are", "tasks"],
     methods: ["These", "are", "methods"],
     challenges: ["These", "are", "challenges"],
     links: [
-      "/images/trivia/page.jpg",
-      "/images/trivia/results.jpg",
-      "/images/trivia/challenges.jpg",
-      "/images/trivia/links.jpg"
+      "/images/Trivia/page.jpg",
+      "/images/Trivia/results.jpg",
+      "/images/Trivia/challenges.jpg",
+      "/images/Trivia/links.jpg"
     ]
   }
 ]
@@ -185,7 +185,7 @@ const StandardPortfolioCard = props => {
                   <Header as="h4" style={style.secondary} >Studii</Header>
 
                   <Modal trigger={
-                    <Image circular style={style.imageCenter} name={card.title} src="../images/standard/top.jpg" size="medium" />
+                    <Image circular style={style.imageCenter} name={card.title} src={card.photo} size="medium" />
                   }>
                     <Modal.Header>{card.title}</Modal.Header>
                     <Modal.Content tab>
