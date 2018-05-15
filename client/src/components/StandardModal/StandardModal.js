@@ -175,7 +175,7 @@ const StandardPortfolioCard = props => {
       
       <Container style={{backgroundColor: props.primaryColor, color: props.secondaryColor}}>
         <Header as="h2" style={style.secondary}>Portfolio</Header><br></br>
-        <Grid>
+        <Grid stackable>
           <Grid.Row columns={3} divided>
             {cardData.map(card => {
               return(
