@@ -52,7 +52,7 @@ const cardData = [
     title: "studii",
     purpose: "To find the best restaurants in specific geographic neighborhoods around Richmond (and potentially beyond), therefore living like a local",
     technologiesUsed: "HTML5, CSS3, Javascript, jQuery, google places api",
-    photo: "../images/local/main.png",
+    photo: "../images/local/main.png",     
     tasks: ["these", "are", "tasks"],
     methods: ["These", "are", "methods"],
     challenges: ["These", "are", "challenges"],
@@ -185,7 +185,7 @@ const StandardPortfolioCard = props => {
                   <Header as="h4" style={style.secondary} >Studii</Header>
 
                   <Modal trigger={
-                    <Image circular style={style.imageCenter} name={card.title} src={card.photo} size="medium" />
+                    <Image circular style={style.imageCenter} name={card.title} src="../images/local/main.png" size="medium" />
                   }>
                     <Modal.Header>{card.title}</Modal.Header>
                     <Modal.Content tab>
