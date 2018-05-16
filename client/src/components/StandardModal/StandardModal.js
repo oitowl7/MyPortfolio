@@ -63,7 +63,7 @@ const cardData = [
       "../images/Local/main.png",
       "../images/Local/methods.jpg",
       "../images/Local/challenges.jpg",
-      "../images/Local/links.jpg"
+      "../images/Local/links.gif"
     ]
   },
   {
@@ -194,7 +194,7 @@ const StandardPortfolioCard = props => {
                               <Tab.Pane attached={false} style={style.secondaryPrimary}>
                                 <Grid>
                                   <Grid.Column width={8}>
-                                    <Image wrapped src={card.images[3]} style={style.imageCenter} size="medium" bordered rounded/>
+                                    <Image wrapped src={card.images[3]} style={style.imageCenter} size="medium" rounded/>
                                   </Grid.Column>
                                   <Grid.Column width={8}>
                                     <List bulleted>
