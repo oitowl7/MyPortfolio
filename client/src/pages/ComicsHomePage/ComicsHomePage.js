@@ -23,7 +23,7 @@ class ComicsHomePage extends React.Component {
   render() {
     return(
       <div>
-        <span>This is the standard home page yo</span>
+        <span>This is the comics home page yo</span>
         <Navbar
           activePage={this.state.activePage}
           handleMenuClick={this.handleMenuClick}

@@ -119,9 +119,9 @@ const StandardPortfolioCard = props => {
         <Header as="h2" style={style.secondary}>Portfolio</Header><br></br>
         <Grid stackable>
           <Grid.Row columns={3} divided>
-            {cardData.map(card => {
+            {cardData.map( (card, i) => {
               return(
-              <Grid.Column>
+              <Grid.Column key={i}>
 
                 <Container fluid textAlign="center">
                   <Header as="h4" style={style.secondary} >{card.title}</Header>

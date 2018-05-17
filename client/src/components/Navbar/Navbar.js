@@ -1,11 +1,11 @@
 import React from 'react';
 import { /* BrowserRouter as Router, Route, Switch, Redirect*/ Link } from "react-router-dom";
-import { Segment, Menu, Dropdown } from 'semantic-ui-react';
+import { Segment, Menu, Dropdown, Responsive } from 'semantic-ui-react';
 import "./Navbar.css"
 
 const Navbar = props => {
   return (
-    <div>
+    <div id="navbarDiv">
       {/* <Segment> */}
         <Menu color={props.tableColor} inverted secondary fluid>
           <Menu.Item name='JORDAN SHEAR' />

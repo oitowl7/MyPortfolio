@@ -11,12 +11,8 @@
   font-family: MyWebFont !important;
 }
 
-body {
-  background-color: #02647B
-}
 
-
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 768px) {
   h1 {
     font-size: 70px !important;
   }
