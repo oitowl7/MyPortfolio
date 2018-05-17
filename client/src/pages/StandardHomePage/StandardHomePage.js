@@ -54,7 +54,7 @@ class StandardHomePage extends React.Component {
     }
     return(
       <div style={{}}>
-        <Responsive  minWidth={768}>
+        <Responsive  minWidth={768} style={{backgroundColor: this.state.primaryColor}}>
           <Navbar
             activePage={this.state.activePage}
             handleMenuClick={this.handleMenuClick}
@@ -66,7 +66,7 @@ class StandardHomePage extends React.Component {
           <StandardTopImage 
             secondaryColor={this.state.secondaryColor}
             margin="70px"
-            zindex={0}
+            zindex={1}
           />
           <div></div>
           <StandardAboutMe

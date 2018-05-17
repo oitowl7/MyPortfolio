@@ -126,7 +126,7 @@ const StandardPortfolioCard = props => {
                 <Container fluid textAlign="center">
                   <Header as="h4" style={style.secondary} >{card.title}</Header>
 
-                  <Modal style={style.secondaryPrimary} trigger={
+                  <Modal style={style.secondaryPrimary} closeIcon trigger={
                     <Image circular style={style.imageCenter} name={card.title} src={card.photo} size="medium" />
                   }>
                     <Modal.Header style={style.secondaryPrimary}>{card.title}</Modal.Header>

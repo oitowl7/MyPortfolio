@@ -32,7 +32,7 @@ const StandardTopImage = props => {
         style={style.image}
       />
       <div style={style.container}>
-          <Container  textAlign="center" style={{position: "absolute", top: props.margin || "80"}}>
+          <Container  textAlign="center" style={{position: "absolute", top: props.margin || "80", zIndex: 2}}>
             <Header as="h1" >Jordan Shear</Header>
             <Header as="h3">a full stack web developer, wannabe glam rock star, and laser scanning expert</Header>
           </Container>

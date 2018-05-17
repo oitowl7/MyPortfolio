@@ -7,14 +7,14 @@ const Navbar = props => {
   return (
     <div id="navbarDiv">
       {/* <Segment> */}
-        <Menu color={props.tableColor} inverted secondary fluid>
+        <Menu color={props.tableColor} inverted secondary fluid style={{position: "fixed", zIndex: 2}}>
           <Menu.Item name='JORDAN SHEAR' />
           <Menu.Item name='Top' active={props.activeMenuItem === 'Top'} onClick={()=>props.handleMenuClick("Top")} />
           <Menu.Item name='Bio' active={props.activeMenuItem === 'Bio'} onClick={()=>props.handleMenuClick("Bio")} />
           <Menu.Item name='Technologies' active={props.activeMenuItem === 'Technologies'} onClick={()=>props.handleMenuClick("Technologies")} />
           <Menu.Item name='Portfolio' active={props.activeMenuItem === 'Portfolio'} onClick={()=>props.handleMenuClick("Portfolio")} />
           <Dropdown item text='Change Themes' >
-            <Dropdown.Menu color="teal" style={{color: props.tableColor, backgroundColor: props.secondaryColor}}>
+            <Dropdown.Menu color="teal" style={{color: props.primaryColor, backgroundColor: props.secondaryColor}}>
               <Dropdown.Item /*onClick={()=>props.handleChangeTheme("standard")}*/ >
                 <div style={{backgroundColor: props.secondaryColor}}>
                   <Link to="/standard" style={{color: props.tableColor}}>Standard</Link>
