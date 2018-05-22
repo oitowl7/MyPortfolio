@@ -61,7 +61,7 @@ const technologies = [
   },
   {
     src: "../images/standardTechnologies/facebook.png",
-    text: "Facebook Authentication"
+    text: "Facebook Auth"
   },
   {
     src: "../images/standardTechnologies/heroku.png",
