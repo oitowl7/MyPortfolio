@@ -6,6 +6,7 @@ import StandardTopImage from "../../components/StandardTopImage";
 import StandardAboutMe from "../../components/StandardAboutMe";
 import StandardPortfolio from "../../components/StandardPortfolio"
 import StandardModal from "../../components/StandardModal"
+import StandardTechnologies from "../../components/StandardTechnologies"
 import { Image, Divider, Container, Responsive, Button, Sidebar, Segment, Menu, Icon, Header, Dropdown} from 'semantic-ui-react';
 
 
@@ -78,6 +79,16 @@ class StandardHomePage extends React.Component {
             <Divider style={{color: this.state.secondaryColor}}/>
             <Divider style={{color: this.state.secondaryColor}}/>
           </Container>
+          <StandardTechnologies
+            primaryColor={this.state.primaryColor}
+            tertiaryColor={this.state.tertiaryColor}
+            secondaryColor={this.state.secondaryColor}
+            columnNumber={6}
+          />
+          <Container>
+            <Divider style={{color: this.state.secondaryColor}}/>
+            <Divider style={{color: this.state.secondaryColor}}/>
+          </Container>
           <StandardModal
             primaryColor={this.state.primaryColor}
             tertiaryColor={this.state.tertiaryColor}
@@ -90,7 +101,7 @@ class StandardHomePage extends React.Component {
 
         <Responsive  maxWidth={768}>
           <Button inverted onClick={this.toggleVisibility} style={style.sidebarButton}><Icon name='bars'/>Menu</Button>
-          <Sidebar.Pushable as={Segment}  style={style.sidebarPushable}>
+          <Sidebar.Pushable as={"div"}  style={style.sidebarPushable}>
             <Sidebar as={Menu} stackable animation='slide out' width='thin' visible={this.state.visible} icon='labeled' vertical inverted style={style.sidebar} inverted>
               <Menu.Item name='Top' style={{color: this.state.secondaryColor}}>
                 <Icon name='arrow up' />Top
@@ -116,14 +127,14 @@ class StandardHomePage extends React.Component {
               <Responsive maxWidth={768} minWidth={486}>
               <StandardTopImage 
                 secondaryColor={this.state.secondaryColor}
-                margin="-150px"
+                margin="-300px"
               />
               </Responsive>
 
               <Responsive maxWidth={486}>
               <StandardTopImage 
                 secondaryColor={this.state.secondaryColor}
-                margin="-250px"
+                margin="-350px"
               />
               </Responsive>
 
@@ -133,6 +144,16 @@ class StandardHomePage extends React.Component {
                 primaryColor={this.state.primaryColor}
                 tertiaryColor={this.state.tertiaryColor}
                 secondaryColor={this.state.secondaryColor}
+              />
+              <Container>
+                <Divider style={{color: this.state.secondaryColor}}/>
+                <Divider style={{color: this.state.secondaryColor}}/>
+              </Container>
+              <StandardTechnologies
+                primaryColor={this.state.primaryColor}
+                tertiaryColor={this.state.tertiaryColor}
+                secondaryColor={this.state.secondaryColor}
+                columnNumber={3}
               />
               <Container>
                 <Divider style={{color: this.state.secondaryColor}}/>
