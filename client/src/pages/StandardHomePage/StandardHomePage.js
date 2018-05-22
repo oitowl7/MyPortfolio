@@ -76,8 +76,8 @@ class StandardHomePage extends React.Component {
             secondaryColor={this.state.secondaryColor}
           />
           <Container>
-            <Divider style={{color: this.state.secondaryColor}}/>
-            <Divider style={{color: this.state.secondaryColor}}/>
+            <Divider style={{color: this.state.secondaryColor, backgroundColor: this.state.secondaryColor}}/>
+            <Divider style={{color: this.state.secondaryColor, backgroundColor: this.state.secondaryColor}}/>
           </Container>
           <StandardTechnologies
             primaryColor={this.state.primaryColor}
@@ -86,8 +86,8 @@ class StandardHomePage extends React.Component {
             columnNumber={6}
           />
           <Container>
-            <Divider style={{color: this.state.secondaryColor}}/>
-            <Divider style={{color: this.state.secondaryColor}}/>
+            <Divider style={{color: this.state.secondaryColor, backgroundColor: this.state.secondaryColor}}/>
+            <Divider style={{color: this.state.secondaryColor, backgroundColor: this.state.secondaryColor}}/>
           </Container>
           <StandardModal
             primaryColor={this.state.primaryColor}
@@ -146,8 +146,8 @@ class StandardHomePage extends React.Component {
                 secondaryColor={this.state.secondaryColor}
               />
               <Container>
-                <Divider style={{color: this.state.secondaryColor}}/>
-                <Divider style={{color: this.state.secondaryColor}}/>
+                <Divider style={{color: this.state.secondaryColor, backgroundColor: this.state.secondaryColor}}/>
+                <Divider style={{color: this.state.secondaryColor, backgroundColor: this.state.secondaryColor}}/>
               </Container>
               <StandardTechnologies
                 primaryColor={this.state.primaryColor}
@@ -156,8 +156,8 @@ class StandardHomePage extends React.Component {
                 columnNumber={3}
               />
               <Container>
-                <Divider style={{color: this.state.secondaryColor}}/>
-                <Divider style={{color: this.state.secondaryColor}}/>
+                <Divider style={{color: this.state.secondaryColor, backgroundColor: this.state.secondaryColor}}/>
+                <Divider style={{color: this.state.secondaryColor, backgroundColor: this.state.secondaryColor}}/>
               </Container>
               <StandardModal
                 primaryColor={this.state.primaryColor}
