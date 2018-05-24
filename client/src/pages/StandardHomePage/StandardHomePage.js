@@ -144,13 +144,13 @@ class StandardHomePage extends React.Component {
           <Responsive maxWidth={768} minWidth={486}>
           <StandardTopImage 
             secondaryColor={this.state.secondaryColor}
-            margin="-300px"
+            margin="50px"
           />
           </Responsive>
           <Responsive maxWidth={486}>
           <StandardTopImage 
             secondaryColor={this.state.secondaryColor}
-            margin="-350px"
+            margin="0"
           />
           </Responsive>
 
