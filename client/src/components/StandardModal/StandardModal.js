@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { Header, Modal, Image, Container, Button, Grid, Tab, List } from 'semantic-ui-react';
+import { Header, Modal, Image, Container, Grid, Tab, List } from 'semantic-ui-react';
 import "./StandardModal.css"
 
 const cardData = [
@@ -112,7 +112,6 @@ const StandardPortfolioCard = props => {
     color: props.secondaryColor
 };
 
-  const color = "teal";
   return (
     <div id="portfolio">      
       <Container style={{backgroundColor: props.primaryColor, color: props.secondaryColor}}>

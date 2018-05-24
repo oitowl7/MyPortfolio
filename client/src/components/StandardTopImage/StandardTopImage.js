@@ -1,6 +1,6 @@
 import React from 'react';
-import { /* BrowserRouter as Router, Route, Switch, Redirect*/ Link } from "react-router-dom";
-import { Image, Container, Header, Divider } from 'semantic-ui-react';
+// import { /* BrowserRouter as Router, Route, Switch, Redirect*/ Link } from "react-router-dom";
+import { Image, Container, Header } from 'semantic-ui-react';
 import "./StandardTopImage.css"
 
 const StandardTopImage = props => {

@@ -1,13 +1,17 @@
 import React from "react";
-import { /* BrowserRouter as Router, Route, Switch, Redirect,*/ Link  } from "react-router-dom";
+// import { /* BrowserRouter as Router, Route, Switch, Redirect,*/ Link  } from "react-router-dom";
 // import API from "./utils/API";
 import Navbar from "../../components/Navbar";
 import StandardTopImage from "../../components/StandardTopImage";
 import StandardAboutMe from "../../components/StandardAboutMe";
-import StandardPortfolio from "../../components/StandardPortfolio"
+// import StandardPortfolio from "../../components/StandardPortfolio"
 import StandardModal from "../../components/StandardModal"
 import StandardTechnologies from "../../components/StandardTechnologies"
-import { Image, Divider, Container, Responsive, Button, Sidebar, Segment, Menu, Icon, Header, Dropdown} from 'semantic-ui-react';
+import SidemenuComponent from "../../components/StandardSidemenu"
+import { Divider, Container, Responsive } from 'semantic-ui-react';
+import { Element , Events, animateScroll as  scroll, scrollSpy } from 'react-scroll'
+ 
+
 
 
 
@@ -34,25 +38,47 @@ class StandardHomePage extends React.Component {
   }
 
   componentDidMount(){
-    console.log("margin in here: " +  window.marginCalc)
+    //start scroll stuff
+    Events.scrollEvent.register('begin', function(to, element) {
+      console.log("begin", arguments);
+    });
+ 
+    Events.scrollEvent.register('end', function(to, element) {
+      console.log("end", arguments);
+    });
+ 
+    scrollSpy.update();
+    //end scroll stuff
+  }
+  
+  toggleVisibility = () => this.setState({ visible: !this.state.visible })
+
+  //start default scroll functions
+
+  componentWillUnmount = () => {
+    Events.scrollEvent.remove('begin');
+    Events.scrollEvent.remove('end');
+  }
+  scrollToTop = () => {
+    scroll.scrollToTop();
+  }
+  scrollToBottom = () => {
+    scroll.scrollToBottom();
+  }
+  scrollTo = () => {
+    scroll.scrollTo(100);
+  }
+  scrollMore = () => {
+    scroll.scrollMore(100);
+  }
+  handleSetActive = to => {
+    console.log(to);
   }
 
-  toggleVisibility = () => this.setState({ visible: !this.state.visible })
-  
+  //end scroll functions
 
 
   render() {
-    const style = {
-      sidebar: {
-        zIndex: 2, backgroundColor: this.state.primaryColor, color: this.state.secondaryColor, position: "fixed", top: 30
-      },
-      sidebarButton: {
-        position: "fixed", left: 5, zIndex: 1, backgroundColor: this.state.primaryColor, color: this.state.secondaryColor
-      },
-      sidebarPushable: {
-        backgroundColor: this.state.primaryColor, marginTop: 0
-      }
-    }
     return(
       <div style={{}}>
         <Responsive  minWidth={768} style={{backgroundColor: this.state.primaryColor}}>
@@ -63,43 +89,109 @@ class StandardHomePage extends React.Component {
             tableColor={this.state.tableColor}
             handleChangeTheme={this.handleChangeTheme}
             secondaryColor={this.state.secondaryColor}
+            primaryColor={this.state.primaryColor}
           />
+          <Element name="top" />
           <StandardTopImage 
             secondaryColor={this.state.secondaryColor}
             margin="70px"
             zindex={1}
           />
           <div></div>
-          <StandardAboutMe
-            primaryColor={this.state.primaryColor}
-            tertiaryColor={this.state.tertiaryColor}
-            secondaryColor={this.state.secondaryColor}
-          />
+          <Element name="bio">
+            <StandardAboutMe
+              primaryColor={this.state.primaryColor}
+              tertiaryColor={this.state.tertiaryColor}
+              secondaryColor={this.state.secondaryColor}
+            />
+          </Element>
           <Container>
             <Divider style={{color: this.state.secondaryColor, backgroundColor: this.state.secondaryColor}}/>
             <Divider style={{color: this.state.secondaryColor, backgroundColor: this.state.secondaryColor}}/>
           </Container>
-          <StandardTechnologies
-            primaryColor={this.state.primaryColor}
-            tertiaryColor={this.state.tertiaryColor}
-            secondaryColor={this.state.secondaryColor}
-            columnNumber={6}
-          />
+          <Element name="technologies">
+            <StandardTechnologies
+              primaryColor={this.state.primaryColor}
+              tertiaryColor={this.state.tertiaryColor}
+              secondaryColor={this.state.secondaryColor}
+              columnNumber={6}
+            />
+          </Element>
           <Container>
             <Divider style={{color: this.state.secondaryColor, backgroundColor: this.state.secondaryColor}}/>
             <Divider style={{color: this.state.secondaryColor, backgroundColor: this.state.secondaryColor}}/>
           </Container>
-          <StandardModal
-            primaryColor={this.state.primaryColor}
-            tertiaryColor={this.state.tertiaryColor}
-            secondaryColor={this.state.secondaryColor}
-            // modalToOpen= {this.state.name}
-            open={this.state.modalOpen}
-          />
+          <Element name="portfolio">
+            <StandardModal
+              primaryColor={this.state.primaryColor}
+              tertiaryColor={this.state.tertiaryColor}
+              secondaryColor={this.state.secondaryColor}
+              // modalToOpen= {this.state.name}
+              open={this.state.modalOpen}
+            />
+          </Element>
         </Responsive>
 
 
-        <Responsive  maxWidth={768}>
+
+        <Responsive  maxWidth={768} >
+          <SidemenuComponent
+            secondaryColor={this.state.secondaryColor}
+            primaryColor={this.state.primaryColor}
+            visible={this.state.visible}
+          />
+          <Element name="top" />
+          <Responsive maxWidth={768} minWidth={486}>
+          <StandardTopImage 
+            secondaryColor={this.state.secondaryColor}
+            margin="-300px"
+          />
+          </Responsive>
+          <Responsive maxWidth={486}>
+          <StandardTopImage 
+            secondaryColor={this.state.secondaryColor}
+            margin="-350px"
+          />
+          </Responsive>
+
+          <div style={{backgroundColor: this.state.primaryColor}}>
+            <Element name="bio">
+              <StandardAboutMe
+                primaryColor={this.state.primaryColor}
+                tertiaryColor={this.state.tertiaryColor}
+                secondaryColor={this.state.secondaryColor}
+              />
+            </Element>
+            <Container>
+              <Divider style={{color: this.state.secondaryColor, backgroundColor: this.state.secondaryColor}}/>
+              <Divider style={{color: this.state.secondaryColor, backgroundColor: this.state.secondaryColor}}/>
+            </Container>
+            <Element name="technologies">
+              <StandardTechnologies
+                primaryColor={this.state.primaryColor}
+                tertiaryColor={this.state.tertiaryColor}
+                secondaryColor={this.state.secondaryColor}
+                columnNumber={3}
+              />
+            </Element>
+            <Container>
+              <Divider style={{color: this.state.secondaryColor, backgroundColor: this.state.secondaryColor}}/>
+              <Divider style={{color: this.state.secondaryColor, backgroundColor: this.state.secondaryColor}}/>
+            </Container>
+            <Element name="portfolio">
+              <StandardModal
+                primaryColor={this.state.primaryColor}
+                tertiaryColor={this.state.tertiaryColor}
+                secondaryColor={this.state.secondaryColor}
+                // modalToOpen= {this.state.name}
+                open={this.state.modalOpen}
+              />
+            </Element>
+          </div>
+        </Responsive>
+
+        {/* this will need to be removed  */}
+        {/* <Responsive  maxWidth={768}>
           <Button inverted onClick={this.toggleVisibility} style={style.sidebarButton}><Icon name='bars'/>Menu</Button>
           <Sidebar.Pushable as={"div"}  style={style.sidebarPushable}>
             <Sidebar as={Menu} stackable animation='slide out' width='thin' visible={this.state.visible} icon='labeled' vertical inverted style={style.sidebar} inverted>
@@ -168,7 +260,7 @@ class StandardHomePage extends React.Component {
               />
             </Sidebar.Pusher>
           </Sidebar.Pushable>
-        </Responsive>
+        </Responsive> */}
       </div>
     )
   }

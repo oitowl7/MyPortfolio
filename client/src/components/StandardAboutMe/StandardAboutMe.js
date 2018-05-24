@@ -1,6 +1,6 @@
 import React from 'react';
 import { /* BrowserRouter as Router, Route, Switch, Redirect, Link*/ } from "react-router-dom";
-import { Container, Header, Grid, Table, List } from 'semantic-ui-react';
+import { Container, Header } from 'semantic-ui-react';
 import EducationTable from "../EducationTable";
 import WorkExperienceTable from "../WorkExperienceTable";
 import "./StandardAboutMe.css";
@@ -33,11 +33,5 @@ const StandardAboutMe = props => {
     </div>
   );
 }
-
-const style = {
-  header: {
-    color: "#FFDF80" ,
-  }
-};
 
 export default StandardAboutMe

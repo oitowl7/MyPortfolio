@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, /*Redirect*/ } from "react-router-dom";
 // import API from "./utils/API";
-import Question from "./pages/Question";
+// import Question from "./pages/Question";
 import StandardHomePage from "./pages/StandardHomePage";
 import Page404 from "./pages/Page404";
 import ComicsHomePage from "./pages/ComicsHomePage";

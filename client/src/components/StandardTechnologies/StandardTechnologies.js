@@ -4,22 +4,10 @@ import { Container, Header, Grid, Image } from 'semantic-ui-react';
 import technologies from "../../utils/standardTechnologies.js"
 
 const StandardTechnologies = props => {
-  const style = {
-    secondary: {
-      color: props.secondaryColor ,
-    },
-    imageCenter: {
-      display: "block",
-      margin: "auto",
-      width: 128,
-      height: "auto"
-    }
-  }
-  console.log(technologies)
   return (
     <div id="portfolio">
       <Container style={{marginTop: 20}}>
-        <Header as="h2" style={style.secondary}>Technologies</Header>
+        <Header as="h2" style={style.header}>Technologies</Header>
         <Grid columns={props.columnNumber}>
           {technologies.map((technology, i) => {
             return(

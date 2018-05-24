@@ -1,6 +1,6 @@
 import React from 'react';
 import { /* BrowserRouter as Router, Route, Switch, Redirect, Link*/ } from "react-router-dom";
-import { Container, Header, Grid } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 import StandardPortfolioCard from "../StandardPortfolioCard"
 
 const StandardPortfolio = props => {
@@ -17,10 +17,5 @@ const StandardPortfolio = props => {
   );
 }
 
-const style = {
-  header: {
-    color: "#FFDF80" ,
-  }
-};
 
 export default StandardPortfolio
