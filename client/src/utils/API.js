@@ -1,5 +1,9 @@
-// import axios from "axios";
+import axios from "axios";
 
 export default {
-  
+  sendEmail : function(obj) {
+    return axios.post(`/email/send`, {
+      data: obj
+    });
+  }
 };

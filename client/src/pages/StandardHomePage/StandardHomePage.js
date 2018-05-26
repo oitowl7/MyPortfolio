@@ -1,6 +1,6 @@
 import React from "react";
 // import { /* BrowserRouter as Router, Route, Switch, Redirect,*/ Link  } from "react-router-dom";
-// import API from "./utils/API";
+import API from "../../utils/API.js";
 import Navbar from "../../components/Navbar";
 import StandardTopImage from "../../components/StandardTopImage";
 import StandardAboutMe from "../../components/StandardAboutMe";
@@ -8,6 +8,7 @@ import StandardAboutMe from "../../components/StandardAboutMe";
 import StandardModal from "../../components/StandardModal"
 import StandardTechnologies from "../../components/StandardTechnologies"
 import SidemenuComponent from "../../components/StandardSidemenu"
+import StandardContact from "../../components/StandardContact"
 import { Divider, Container, Responsive } from 'semantic-ui-react';
 import { Element , Events, animateScroll as  scroll, scrollSpy } from 'react-scroll'
  
@@ -26,7 +27,8 @@ class StandardHomePage extends React.Component {
     quadrinaryColor: "black",
     primaryColor: "#02647B",
     modalOpen: false,
-    visible: false
+    visible: false,
+    radioValue: null,
   };
 
   handleMenuClick = value => {
@@ -76,6 +78,84 @@ class StandardHomePage extends React.Component {
   }
 
   //end scroll functions
+  //begin form functions
+  
+  handleFormChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+      });
+  };
+  
+  handleRadioChange = value => {
+    this.setState({ radioValue: value })
+  };
+
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    this.setState({firstNameError: null, firstNameMessage: null, lastNameError: null, lastNameMessage: null, emailError: null, emailMessage: null, messageError: null, messageMessage: null, radioError: null, radioMessage: null})
+    const objToSave = {
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      email: this.state.email,
+      reason: this.state.radioValue,
+      budget: this.state.budget,
+      timetable: this.state.timetable,
+      message: this.state.message
+    }
+    console.log(objToSave)
+    // checks the inputs for user errors and such. returns false if there are none
+    const problem = this.checkFunction(objToSave);
+    if (problem) {
+      return;
+    } else {
+      this.setState({ emailBeingSent: true })
+      console.log("we got here");
+      API.sendEmail(objToSave).then(data =>{
+        this.setState({emailBeingSent: false});
+      }).catch(err => console.log(err));
+    }
+  };
+
+  checkFunction = objToSave => {
+    let problem = false;
+    if (!this.state.firstName) {
+      this.setState({ firstNameError: "error", firstNameMessage: "This is a required field"})
+      problem = true;
+    }
+    if (!this.state.lastName) {
+      this.setState({ lastNameError: "error", lastNameMessage: "This is a required field"})
+      problem = true;
+    }
+    if (!this.state.email) {
+      this.setState({ emailError: "error", emailMessage: "This is a required field"})
+      problem = true;
+    } else {
+      const firstEmailSplit = this.state.email.split("@");
+      if (firstEmailSplit.length === 2) {
+        const secondEmailSplit = firstEmailSplit[1].split(".");
+        if (secondEmailSplit.length !== 2) {
+          problem = true;
+          this.setState({emailError: "error", emailMessage: "Please enter a valid email address (xxx@yyy.zzz)"})
+        }
+      } else {
+        problem = true;
+        this.setState({emailError: "error", emailMessage: "Please enter a valid email address (xxx@yyy.zzz)"})
+      }
+    }
+    if(!this.state.radioValue) {
+      this.setState({ radioError: "error", radioMessage: "This is a required field"})
+      problem = true;
+    }
+    if (!this.state.message) {
+      this.setState({messageError: "error", messageMessage: "This is a required field"})
+      problem = true;
+    }
+    return(problem);
+  }
+
+  //end form functions
 
 
   render() {
@@ -129,6 +209,39 @@ class StandardHomePage extends React.Component {
               // modalToOpen= {this.state.name}
               open={this.state.modalOpen}
             />
+          </Element>
+          <Container>
+            <Divider style={{color: this.state.secondaryColor, backgroundColor: this.state.secondaryColor}}/>
+            <Divider style={{color: this.state.secondaryColor, backgroundColor: this.state.secondaryColor}}/>
+          </Container>
+          <Element name="contact">
+            <StandardContact
+              primaryColor={this.state.primaryColor}
+              tertiaryColor={this.state.tertiaryColor}
+              secondaryColor={this.state.secondaryColor}
+              columns={3}
+              firstName={this.state.firstName}
+              lastName={this.state.lastName}
+              email={this.state.email}
+              firstNameError={this.state.firstNameError}
+              firstNameMessage={this.state.firstNameMessage}
+              lastNameError={this.state.lastNameError}
+              lastNameMessage={this.state.lastNameMessage}
+              emailError={this.state.emailError}
+              emailMessage={this.state.emailMessage}
+              radioValue={this.state.radioValue}
+              radioError={this.state.radioError}
+              radioMessage={this.state.radioMessage}
+              budget={this.state.budget}
+              timetable={this.state.timetable}
+              message={this.state.message}
+              messageError={this.state.messageError}
+              messageMessage={this.state.messageMessage}
+              handleFormChange={this.handleFormChange}
+              handleFormSubmit={this.handleFormSubmit}
+              handleRadioChange={this.handleRadioChange}
+            />
+    }
           </Element>
         </Responsive>
 
@@ -187,80 +300,40 @@ class StandardHomePage extends React.Component {
                 open={this.state.modalOpen}
               />
             </Element>
+            <Container>
+              <Divider style={{color: this.state.secondaryColor, backgroundColor: this.state.secondaryColor}}/>
+              <Divider style={{color: this.state.secondaryColor, backgroundColor: this.state.secondaryColor}}/>
+            </Container>
+            <Element name="contact">
+              <StandardContact
+                primaryColor={this.state.primaryColor}
+                tertiaryColor={this.state.tertiaryColor}
+                secondaryColor={this.state.secondaryColor}
+                columns={1}
+                firstName={this.state.firstName}
+                lastName={this.state.lastName}
+                email={this.state.email}
+                firstNameError={this.state.firstNameError}
+                firstNameMessage={this.state.firstNameMessage}
+                lastNameError={this.state.lastNameError}
+                lastNameMessage={this.state.lastNameMessage}
+                emailError={this.state.emailError}
+                emailMessage={this.state.emailMessage}
+                radioValue={this.state.radioValue}
+                radioError={this.state.radioError}
+                radioMessage={this.state.radioMessage}
+                budget={this.state.budget}
+                timetable={this.state.timetable}
+                message={this.state.message}
+                messageError={this.state.messageError}
+                messageMessage={this.state.messageMessage}
+                handleFormChange={this.handleFormChange}
+                handleFormSubmit={this.handleFormSubmit}
+                handleRadioChange={this.handleRadioChange}
+              />
+            </Element>
           </div>
         </Responsive>
-
-        {/* this will need to be removed  */}
-        {/* <Responsive  maxWidth={768}>
-          <Button inverted onClick={this.toggleVisibility} style={style.sidebarButton}><Icon name='bars'/>Menu</Button>
-          <Sidebar.Pushable as={"div"}  style={style.sidebarPushable}>
-            <Sidebar as={Menu} stackable animation='slide out' width='thin' visible={this.state.visible} icon='labeled' vertical inverted style={style.sidebar} inverted>
-              <Menu.Item name='Top' style={{color: this.state.secondaryColor}}>
-                <Icon name='arrow up' />Top
-              </Menu.Item>
-              <Menu.Item name='Bio' style={{color: this.state.secondaryColor}}>
-                <Icon name='info' />Bio
-              </Menu.Item>
-              <Menu.Item name='Technologies' style={{color: this.state.secondaryColor}}>
-                <Icon name='html5' />Technologies
-              </Menu.Item>
-              <Menu.Item name='Portfolio' style={{color: this.state.secondaryColor}}>
-                <Icon name='folder open' />Portfolio
-              </Menu.Item>
-              <Menu.Item name='Portfolio' style={{color: this.state.secondaryColor}}>
-                <Link to="/comics" style={{color: this.state.secondaryColor}}><Icon size="big" name='spy' /><br></br>Comic Book Style</Link>
-              </Menu.Item>
-              <Menu.Item name='Portfolio' style={{color: this.state.secondaryColor}}>
-                <Link to="/starwars" style={{color: this.state.secondaryColor}}><Icon size="big" name='star' /><br></br>Star Wars Style</Link>
-              </Menu.Item>
-            </Sidebar>
-            <Sidebar.Pusher style={{backgroundColor: this.state.primaryColor}}>
-
-              <Responsive maxWidth={768} minWidth={486}>
-              <StandardTopImage 
-                secondaryColor={this.state.secondaryColor}
-                margin="-300px"
-              />
-              </Responsive>
-
-              <Responsive maxWidth={486}>
-              <StandardTopImage 
-                secondaryColor={this.state.secondaryColor}
-                margin="-350px"
-              />
-              </Responsive>
-
-
-              <div></div>
-              <StandardAboutMe
-                primaryColor={this.state.primaryColor}
-                tertiaryColor={this.state.tertiaryColor}
-                secondaryColor={this.state.secondaryColor}
-              />
-              <Container>
-                <Divider style={{color: this.state.secondaryColor, backgroundColor: this.state.secondaryColor}}/>
-                <Divider style={{color: this.state.secondaryColor, backgroundColor: this.state.secondaryColor}}/>
-              </Container>
-              <StandardTechnologies
-                primaryColor={this.state.primaryColor}
-                tertiaryColor={this.state.tertiaryColor}
-                secondaryColor={this.state.secondaryColor}
-                columnNumber={3}
-              />
-              <Container>
-                <Divider style={{color: this.state.secondaryColor, backgroundColor: this.state.secondaryColor}}/>
-                <Divider style={{color: this.state.secondaryColor, backgroundColor: this.state.secondaryColor}}/>
-              </Container>
-              <StandardModal
-                primaryColor={this.state.primaryColor}
-                tertiaryColor={this.state.tertiaryColor}
-                secondaryColor={this.state.secondaryColor}
-                // modalToOpen= {this.state.name}
-                open={this.state.modalOpen}
-              />
-            </Sidebar.Pusher>
-          </Sidebar.Pushable>
-        </Responsive> */}
       </div>
     )
   }

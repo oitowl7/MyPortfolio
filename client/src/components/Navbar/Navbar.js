@@ -8,7 +8,7 @@ const Navbar = props => {
   return (
     <div id="navbarDiv">
       {/* <Segment> */}
-        <Menu fluid style={{position: "fixed", zIndex: 2, backgroundColor: props.primaryColor, zIndex: 3}}>
+        <Menu fluid style={{position: "fixed", backgroundColor: props.primaryColor, zIndex: 3}}>
           <Menu.Item name='JORDAN SHEAR' style={{color: props.secondaryColor}}/>
           <Menu.Item name='Top' active={props.activeMenuItem === 'Top'} /*onClick={()=>props.handleMenuClick("Top")}*/ style={{color: props.secondaryColor}}>
             <Link  className="top" to="top" offset={-50} spy={true} smooth={true} duration={500} style={{color: props.secondaryColor, backgroundColor: props.primaryColor, cursor: "pointer"}}>
@@ -28,6 +28,11 @@ const Navbar = props => {
           <Menu.Item name='Portfolio' active={props.activeMenuItem === 'Portfolio'} /*onClick={()=>props.handleMenuClick("Portfolio")}*/  style={{color: props.secondaryColor}}>
             <Link  className="portfolio" to="portfolio" offset={-50} spy={true} smooth={true} duration={500} style={{color: props.secondaryColor, backgroundColor: props.primaryColor, cursor: "pointer"}}>
               Portfolio
+            </Link>
+          </Menu.Item>
+          <Menu.Item name='Contact' active={props.activeMenuItem === 'Contact'} /*onClick={()=>props.handleMenuClick("Portfolio")}*/  style={{color: props.secondaryColor}}>
+            <Link  className="contact" to="contact" offset={-50} spy={true} smooth={true} duration={500} style={{color: props.secondaryColor, backgroundColor: props.primaryColor, cursor: "pointer"}}>
+              Contact
             </Link>
           </Menu.Item>
           <Dropdown item text='Change Themes'  style={{color: props.secondaryColor}}>
