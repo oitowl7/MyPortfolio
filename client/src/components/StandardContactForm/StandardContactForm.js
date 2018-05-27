@@ -45,20 +45,20 @@ class StandardContactForm extends React.Component {
           {/* <Header as="h5">Reason for Emailling</Header> */}
 
         <Form.Group inline>
-          <label style={{fontStyle: "strong", color: this.props.secondaryColor}}>Reason for Emailling:</label>
+          <label style={{fontStyle: "strong", color: this.props.secondaryColor}}>Reason for Emailling: <span style={{color: "red"}}>*</span></label>
           {this.props.radioError ?
             <Label basic color="red" pointing="left">{`${this.props.radioMessage}`}</Label>
           : ""}
           <Grid style={{marginTop: 5}}>
             <Grid.Row columns={this.props.columns}>
               <Grid.Column>
-                <Form.Radio required className="standardRadio" label='Employment' value='employment' checked={this.props.radioValue === 'Employment'} name="radioValue" onChange={() => this.props.handleRadioChange("Employment")} style={{}}/>
+                <Form.Radio className="standardRadio" label='Employment' value='employment' checked={this.props.radioValue === 'Employment'} name="radioValue" onChange={() => this.props.handleRadioChange("Employment")} style={{}}/>
               </Grid.Column>
               <Grid.Column>
-                <Form.Radio required className="standardRadio" label='Freelance Work' value='freelance' checked={this.props.radioValue === 'Freelance'} name="radioValue" onChange={() => this.props.handleRadioChange("Freelance")} />
+                <Form.Radio className="standardRadio" label='Freelance Work' value='freelance' checked={this.props.radioValue === 'Freelance'} name="radioValue" onChange={() => this.props.handleRadioChange("Freelance")} />
               </Grid.Column>
               <Grid.Column>
-                <Form.Radio required className="standardRadio" label='Compliment My Fashion Sense' value='fashion' checked={this.props.radioValue === 'Fashion'} name="radioValue" onChange={() => this.props.handleRadioChange("Fashion")} />
+                <Form.Radio className="standardRadio" label='Compliment My Fashion Sense' value='fashion' checked={this.props.radioValue === 'Fashion'} name="radioValue" onChange={() => this.props.handleRadioChange("Fashion")} />
               </Grid.Column>
               <Grid.Column>
               </Grid.Column>
@@ -67,6 +67,14 @@ class StandardContactForm extends React.Component {
         </Form.Group>
 
         <Form.Group widths="equal">
+          <Form.Field onChange={this.props.handleFormChange} required>
+            <br></br>
+            <label style={{color: this.props.secondaryColor}}>Subject</label>
+            <input name="subject" placeholder="I want you to fight forest fires" name="subject" style={{color: this.props.primaryColor, backgroundColor: this.props.secondaryColor}} />
+            {this.props.subjectError ?
+              <Label basic color="red" pointing="above">{`${this.props.subjectMessage}`}</Label>
+            : ""}
+          </Form.Field>
           <Form.Field onChange={this.props.handleFormChange}>
             <br></br>
             <label style={{color: this.props.secondaryColor}}>Budget (if applicable in $USD)</label>
@@ -77,9 +85,8 @@ class StandardContactForm extends React.Component {
             <label style={{color: this.props.secondaryColor}}>Timetable (if applicable)</label>
             <input name="timetable" placeholder="However much you need (lol)" name="timetable" style={{color: this.props.primaryColor, backgroundColor: this.props.secondaryColor}} />
           </Form.Field>
-          {/* <Form.Field label='Budget (if applicable in $USD)' placeholder="1000" control='input' type='number' name="budget" onChange={this.handleFormChange} />
-          <Form.Field label="Timetable (if applicable)" placeholder="2 months" control="input" type="text" name="timetable" onChange={this.handleFormChange} /> */}
         </Form.Group>
+
           <Form.Field required onChange={this.props.handleFormChange}>
             <br></br>
             <label style={{color: this.props.secondaryColor}}>Message</label>

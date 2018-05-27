@@ -27,6 +27,9 @@ const StandardContact = props => {
             radioMessage={props.radioMessage}
             budget={props.budget}
             timetable={props.timetable}
+            subject={props.subject}
+            subjectError={props.subjectError}
+            subjectMessage={props.subjectMessage}
             message={props.message}
             messageError={props.messageError}
             messageMessage={props.messageMessage}

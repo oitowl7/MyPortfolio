@@ -94,7 +94,7 @@ class StandardHomePage extends React.Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    this.setState({firstNameError: null, firstNameMessage: null, lastNameError: null, lastNameMessage: null, emailError: null, emailMessage: null, messageError: null, messageMessage: null, radioError: null, radioMessage: null})
+    this.setState({firstNameError: null, firstNameMessage: null, lastNameError: null, lastNameMessage: null, emailError: null, emailMessage: null, messageError: null, messageMessage: null, radioError: null, radioMessage: null, subjectError: null, subjectMessage: null})
     const objToSave = {
       firstName: this.state.firstName,
       lastName: this.state.lastName,
@@ -102,6 +102,7 @@ class StandardHomePage extends React.Component {
       reason: this.state.radioValue,
       budget: this.state.budget,
       timetable: this.state.timetable,
+      subject: this.state.subject,
       message: this.state.message
     }
     console.log(objToSave)
@@ -113,6 +114,7 @@ class StandardHomePage extends React.Component {
       this.setState({ emailBeingSent: true })
       console.log("we got here");
       API.sendEmail(objToSave).then(data =>{
+        console.log(data);
         this.setState({emailBeingSent: false});
       }).catch(err => console.log(err));
     }
@@ -150,6 +152,10 @@ class StandardHomePage extends React.Component {
     }
     if (!this.state.message) {
       this.setState({messageError: "error", messageMessage: "This is a required field"})
+      problem = true;
+    }
+    if (!this.state.subject) {
+      this.setState({subjectError: "error", subjectMessage: "This is a required field"})
       problem = true;
     }
     return(problem);
@@ -219,7 +225,7 @@ class StandardHomePage extends React.Component {
               primaryColor={this.state.primaryColor}
               tertiaryColor={this.state.tertiaryColor}
               secondaryColor={this.state.secondaryColor}
-              columns={3}
+              columns={1}
               firstName={this.state.firstName}
               lastName={this.state.lastName}
               email={this.state.email}
@@ -234,6 +240,9 @@ class StandardHomePage extends React.Component {
               radioMessage={this.state.radioMessage}
               budget={this.state.budget}
               timetable={this.state.timetable}
+              subject={this.state.subject}
+              subjectError={this.state.subjectError}
+              subjectMessage={this.state.subjectMessage}
               message={this.state.message}
               messageError={this.state.messageError}
               messageMessage={this.state.messageMessage}
@@ -324,6 +333,9 @@ class StandardHomePage extends React.Component {
                 radioMessage={this.state.radioMessage}
                 budget={this.state.budget}
                 timetable={this.state.timetable}
+                subject={this.state.subject}
+                subjectError={this.state.subjectError}
+                subjectMessage={this.state.subjectMessage}
                 message={this.state.message}
                 messageError={this.state.messageError}
                 messageMessage={this.state.messageMessage}
