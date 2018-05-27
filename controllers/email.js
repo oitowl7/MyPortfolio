@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require("body-parser");
 let router = express.Router();
 const nodemailer = require('nodemailer');
-// const secret = require("../secret.js")
+const secret = require("../secret.js")
 
 //for deployment
   // // console.log(secret);
@@ -21,11 +21,11 @@ const nodemailer = require('nodemailer');
 router.post('/send', (req, res) => {
   const emailObject = req.body.data;
   console.log(emailObject);
-  // console.log(secret);
-  // console.log(secret.secret.user + " " + secret.secret.pass);
+  console.log(secret);
+  console.log(secret.secret.user + " " + secret.secret.pass);
 
-  const mailuser = process.env.USER /*|| secret.secret.user*/;
-  const mailpassword = process.env.PASS /*|| secret.secret.pass*/;
+  const mailuser = process.env.USER || secret.secret.user;
+  const mailpassword = process.env.PASS || secret.secret.pass;
   const message = `
   From: ${req.body.data.firstName} ${req.body.data.lastName}
   Email: ${req.body.data.email}

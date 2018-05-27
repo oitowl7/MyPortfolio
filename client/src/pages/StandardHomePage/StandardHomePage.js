@@ -9,7 +9,8 @@ import StandardModal from "../../components/StandardModal"
 import StandardTechnologies from "../../components/StandardTechnologies"
 import SidemenuComponent from "../../components/StandardSidemenu"
 import StandardContact from "../../components/StandardContact"
-import { Divider, Container, Responsive } from 'semantic-ui-react';
+import StandardFooter from "../../components/StandardFooter"
+import { Divider, Container, Responsive, Dimmer, Header } from 'semantic-ui-react';
 import { Element , Events, animateScroll as  scroll, scrollSpy } from 'react-scroll'
  
 
@@ -29,6 +30,7 @@ class StandardHomePage extends React.Component {
     modalOpen: false,
     visible: false,
     radioValue: null,
+    dimmerOpen: false
   };
 
   handleMenuClick = value => {
@@ -37,6 +39,14 @@ class StandardHomePage extends React.Component {
 
   handleChangeTheme = value => {
     window.location = `/${value}`
+  }
+
+  handleDimmerOpen = () => {
+    this.setState({dimmerOpen: true})
+  }
+
+  handleDimmerClose = () => {
+    this.setState({dimmerOpen: false})
   }
 
   componentDidMount(){
@@ -115,7 +125,7 @@ class StandardHomePage extends React.Component {
       console.log("we got here");
       API.sendEmail(objToSave).then(data =>{
         console.log(data);
-        this.setState({emailBeingSent: false});
+        this.setState({emailBeingSent: false, dimmerOpen: true});
       }).catch(err => console.log(err));
     }
   };
@@ -250,8 +260,24 @@ class StandardHomePage extends React.Component {
               handleFormSubmit={this.handleFormSubmit}
               handleRadioChange={this.handleRadioChange}
             />
-    }
           </Element>
+          <Dimmer
+            active={this.state.dimmerOpen}
+            onClickOutside={this.handleDimmerClose}
+            page
+          >
+            <div>
+              <iframe src="https://giphy.com/embed/5Z4j3cbEXGrTy"></iframe>
+            </div><br></br><br></br>
+            <Container textAlign="center">
+              <Header as="h3" style={{color: this.state.secondaryColor}}>Your email has been sent. I promise to probably read it!</Header>
+            </Container>
+          </Dimmer>
+          <StandardFooter 
+            height={80}
+            primaryColor={this.state.primaryColor}
+            secondaryColor={this.state.secondaryColor}
+          />
         </Responsive>
 
 
@@ -344,6 +370,23 @@ class StandardHomePage extends React.Component {
                 handleRadioChange={this.handleRadioChange}
               />
             </Element>
+            <Dimmer
+              active={this.state.dimmerOpen}
+              onClickOutside={this.handleDimmerClose}
+              page
+            >
+              <div>
+                <iframe src="https://giphy.com/embed/5Z4j3cbEXGrTy"></iframe>
+              </div><br></br><br></br>
+              <Container textAlign="center">
+                <Header as="h3" style={{color: this.state.secondaryColor}}>Your email has been sent. I promise to probably read it!</Header>
+              </Container>
+            </Dimmer>
+            <StandardFooter 
+              height={80}
+              primaryColor={this.state.primaryColor}
+              secondaryColor={this.state.secondaryColor}
+            />
           </div>
         </Responsive>
       </div>
