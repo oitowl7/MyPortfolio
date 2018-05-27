@@ -2,16 +2,16 @@ const express = require('express');
 const bodyParser = require("body-parser");
 let router = express.Router();
 const nodemailer = require('nodemailer');
-const secret = require("../secret.js")
+// const secret = require("../secret.js")
 
 router.post('/send', (req, res) => {
   const emailObject = req.body.data;
   console.log(emailObject);
-  console.log(secret);
-  console.log(secret.secret.user + " " + secret.secret.pass);
+  // console.log(secret);
+  // console.log(secret.secret.user + " " + secret.secret.pass);
 
-  const mailuser = process.env.USER || secret.secret.user;
-  const mailpassword = process.env.PASS || secret.secret.pass;
+  const mailuser = process.env.USER;
+  const mailpassword = process.env.PASS;
 
     // create reusable transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
