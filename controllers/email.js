@@ -2,23 +2,30 @@ const express = require('express');
 const bodyParser = require("body-parser");
 let router = express.Router();
 const nodemailer = require('nodemailer');
+const secret = require("../secret.js")
 
 router.post('/send', (req, res) => {
   const emailObject = req.body.data;
   console.log(emailObject);
+  console.log(secret);
+  console.log(secret.secret.user + " " + secret.secret.pass);
+
+  const mailuser = process.env.USER || secret.secret.user;
+  const mailpassword = process.env.PASS || secret.secret.pass;
 
     // create reusable transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
-        host: 'gmail',
-        secure: false, // true for 465, false for other ports
+        service: 'gmail',
         auth: {
+          user: mailuser, // generated ethereal user
+          pass: mailpassword // generated ethereal password
         }
     });
 
     // setup email data with unicode symbols
     let mailOptions = {
-        from: '"Fred Foo 👻" <oitowl7@gmail.com>', // sender address
-        to: 'oitowl7@gmail.com', // list of receivers
+        from: '"Jordan Shear 👻" <shear_j@hotmail.com>', // sender address
+        to: 'oitowl7@gmail.com, jordanshearbusiness@gmail.com', // list of receivers
         subject: 'Stuff and things', // Subject line
         text: `${req.body.data.message}`, // plain text body
     };
