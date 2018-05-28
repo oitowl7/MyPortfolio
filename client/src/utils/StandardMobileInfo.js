@@ -27,7 +27,7 @@ const cardData = [
       "../images/Trivia/results.jpg",
       "../images/Trivia/challenges.jpg",
       "../images/Trivia/links.jpg",
-      "../images/standard/gitpages.png",
+      "../images/standard/Gitpages.png",
       "../images/standard/github-words.png"
     ]
   },
@@ -61,7 +61,7 @@ const cardData = [
       "../images/Local/methods.jpg",
       "../images/Local/challenges.jpg",
       "../images/Local/links.gif",
-      "../images/standard/gitpages.png",
+      "../images/standard/Gitpages.png",
       "../images/standard/github-words.png"
     ]
   },
