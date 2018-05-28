@@ -90,7 +90,7 @@ const cardData = [
       "https://github.com/oitowl7/Studii-app"
     ],
     images: [
-      "../images/Studii/mobilefriendlymain.png",
+      "../images/Studii/mainmobile.png",
       "../images/Studii/method.jpg",
       "../images/Studii/challenges.jpg",
       "../images/Studii/links.jpg",

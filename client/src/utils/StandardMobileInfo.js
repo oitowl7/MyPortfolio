@@ -57,7 +57,7 @@ const cardData = [
       "https://github.com/oitowl7/Local"
     ],
     images: [
-      "../images/Local/mobilefriendlymain.png",
+      "../images/Local/mainmobile.png",
       "../images/Local/methods.jpg",
       "../images/Local/challenges.jpg",
       "../images/Local/links.gif",
@@ -90,7 +90,7 @@ const cardData = [
       "https://github.com/oitowl7/Studii-app"
     ],
     images: [
-      "../images/Studii/mobilefriendlymain.png",
+      "../images/Studii/mainmobile.png",
       "../images/Studii/method.jpg",
       "../images/Studii/challenges.jpg",
       "../images/Studii/links.jpg",
