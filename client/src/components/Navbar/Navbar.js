@@ -43,10 +43,12 @@ const Navbar = props => {
                 </div>
               </Dropdown.Item>
               <Dropdown.Item /*onClick={()=>props.handleChangeTheme("comics")}*/ >
-                <Link to="/comics" style={{color: props.primaryColor}}>Comic Books</Link>
+                {/* <Link to="/comics" style={{color: props.primaryColor}}>Comic Books</Link> */}
+                  <span to="/standard" onClick={props.handleErrorDimmer} style={{color: props.primaryColor}}>Comics</span>
               </Dropdown.Item>
               <Dropdown.Item /*onClick={()=>props.handleChangeTheme("starwars")}*/ >
-                <Link to="/starwars" style={{color: props.primaryColor}}>Star Wars</Link>
+                {/* <Link to="/starwars" style={{color: props.primaryColor}}>Star Wars</Link> */}
+                  <span to="/standard" onClick={props.handleErrorDimmer} style={{color: props.primaryColor}}>Star Wars</span>
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>

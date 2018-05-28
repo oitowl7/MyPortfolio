@@ -1,7 +1,7 @@
 import React from "react";
 // import { /* BrowserRouter as Router, Route, Switch, Redirect,*/ Link  } from "react-router-dom";
 // import API from "./utils/API";
-import { Form, Header, Grid, Label } from 'semantic-ui-react';
+import { Form, Grid, Label } from 'semantic-ui-react';
 import "./StandardContactForm.css"
 
 
@@ -36,7 +36,7 @@ class StandardContactForm extends React.Component {
           <Form.Field required onChange={this.props.handleFormChange}>
             <br></br>
             <label style={{color: this.props.secondaryColor}}>Email</label>
-            <input name="lastName" name="email" placeholder="buddylight@email.com" style={{color: this.props.primaryColor, backgroundColor: this.props.secondaryColor}} />
+            <input name="email" placeholder="buddylight@email.com" style={{color: this.props.primaryColor, backgroundColor: this.props.secondaryColor}} />
             {this.props.emailError ?
               <Label basic color="red" pointing="above">{`${this.props.emailMessage}`}</Label>
             : ""}
@@ -70,7 +70,7 @@ class StandardContactForm extends React.Component {
           <Form.Field onChange={this.props.handleFormChange} required>
             <br></br>
             <label style={{color: this.props.secondaryColor}}>Subject</label>
-            <input name="subject" placeholder="I want you to fight forest fires" name="subject" style={{color: this.props.primaryColor, backgroundColor: this.props.secondaryColor}} />
+            <input placeholder="I want you to fight forest fires" name="subject" style={{color: this.props.primaryColor, backgroundColor: this.props.secondaryColor}} />
             {this.props.subjectError ?
               <Label basic color="red" pointing="above">{`${this.props.subjectMessage}`}</Label>
             : ""}
@@ -83,7 +83,7 @@ class StandardContactForm extends React.Component {
           <Form.Field onChange={this.props.handleFormChange}>
             <br></br>
             <label style={{color: this.props.secondaryColor}}>Timetable (if applicable)</label>
-            <input name="timetable" placeholder="However much you need (lol)" name="timetable" style={{color: this.props.primaryColor, backgroundColor: this.props.secondaryColor}} />
+            <input name="timetable" placeholder="However much you need (lol)" style={{color: this.props.primaryColor, backgroundColor: this.props.secondaryColor}} />
           </Form.Field>
         </Form.Group>
 

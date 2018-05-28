@@ -1,8 +1,8 @@
 import React from 'react';
 // import { /* BrowserRouter as Router, Route, Switch, Redirect*/ Link } from "react-router-dom";
 import StandardContactForm from "../StandardContactForm"
-import { Header, Image, Container } from 'semantic-ui-react';
-import { Link } from 'react-scroll'
+import { Header, Container } from 'semantic-ui-react';
+// import { Link } from 'react-scroll'
 
 const StandardContact = props => {
   return (

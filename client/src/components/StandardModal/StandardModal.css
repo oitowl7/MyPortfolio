@@ -1,0 +1,11 @@
+.standardMenu a {
+  background-color: #02647B !important;
+  color: #FFDF80 !important;
+  border-color: #FFDF80 !important
+}
+
+.pointing.menu {
+  border-color: #FFDF80 !important;
+  color: #FFDF80 !important;
+  background-color: #02647B !important;
+}

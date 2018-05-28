@@ -6,6 +6,7 @@ import StandardTopImage from "../../components/StandardTopImage";
 import StandardAboutMe from "../../components/StandardAboutMe";
 // import StandardPortfolio from "../../components/StandardPortfolio"
 import StandardModal from "../../components/StandardModal"
+import StandardMobileModal from "../../components/StandardMobileModal"
 import StandardTechnologies from "../../components/StandardTechnologies"
 import SidemenuComponent from "../../components/StandardSidemenu"
 import StandardContact from "../../components/StandardContact"
@@ -30,7 +31,8 @@ class StandardHomePage extends React.Component {
     modalOpen: false,
     visible: false,
     radioValue: null,
-    dimmerOpen: false
+    dimmerOpen: false,
+    dimmerError: false,
   };
 
   handleMenuClick = value => {
@@ -49,8 +51,16 @@ class StandardHomePage extends React.Component {
     this.setState({dimmerOpen: false})
   }
 
+  handleErrorDimmer = () => {
+    this.setState({dimmerError: true});
+  }
+
+  handleErrorDimmerClose = () => {
+    this.setState({dimmerError: false});
+  }
+
   componentDidMount(){
-    //start scroll stuff
+    //start scroll stuff/////////
     Events.scrollEvent.register('begin', function(to, element) {
       console.log("begin", arguments);
     });
@@ -60,12 +70,12 @@ class StandardHomePage extends React.Component {
     });
  
     scrollSpy.update();
-    //end scroll stuff
+    //end scroll stuff//////
   }
   
   toggleVisibility = () => this.setState({ visible: !this.state.visible })
 
-  //start default scroll functions
+  //start default scroll functions////////////
 
   componentWillUnmount = () => {
     Events.scrollEvent.remove('begin');
@@ -87,8 +97,10 @@ class StandardHomePage extends React.Component {
     console.log(to);
   }
 
-  //end scroll functions
-  //begin form functions
+  //end scroll functions///////////////
+
+
+  //begin form functions////////////////
   
   handleFormChange = event => {
     const { name, value } = event.target;
@@ -186,6 +198,7 @@ class StandardHomePage extends React.Component {
             handleChangeTheme={this.handleChangeTheme}
             secondaryColor={this.state.secondaryColor}
             primaryColor={this.state.primaryColor}
+            handleErrorDimmer={this.handleErrorDimmer}
           />
           <Element name="top" />
           <StandardTopImage 
@@ -267,10 +280,21 @@ class StandardHomePage extends React.Component {
             page
           >
             <div>
-              <iframe src="https://giphy.com/embed/5Z4j3cbEXGrTy"></iframe>
+              <iframe src="https://giphy.com/embed/5Z4j3cbEXGrTy" title="email sent" style={{color: this.state.secondaryColor, borderColor: this.state.secondaryColor}}></iframe>
             </div><br></br><br></br>
             <Container textAlign="center">
               <Header as="h3" style={{color: this.state.secondaryColor}}>Your email has been sent. I promise to probably read it!</Header>
+            </Container>
+          </Dimmer>
+          <Dimmer
+            active={this.state.dimmerError}
+            onClickOutside={this.handleErrorDimmerClose}
+            page
+          >
+            <iframe src="https://giphy.com/embed/ZTans30ONaaIM" title="construction" style={{color: this.state.secondaryColor, borderColor: this.state.secondaryColor}}></iframe>
+            <br></br><br></br>
+            <Container textAlign="center">
+              <Header as="h3" style={{color: this.state.secondaryColor}}>This Page Is Under Construction</Header>
             </Container>
           </Dimmer>
           <StandardFooter 
@@ -287,6 +311,7 @@ class StandardHomePage extends React.Component {
             secondaryColor={this.state.secondaryColor}
             primaryColor={this.state.primaryColor}
             visible={this.state.visible}
+            handleErrorDimmer={this.handleErrorDimmer}
           />
           <Element name="top" />
           <Responsive maxWidth={768} minWidth={486}>
@@ -327,13 +352,21 @@ class StandardHomePage extends React.Component {
               <Divider style={{color: this.state.secondaryColor, backgroundColor: this.state.secondaryColor}}/>
             </Container>
             <Element name="portfolio">
-              <StandardModal
+              <StandardMobileModal
                 primaryColor={this.state.primaryColor}
                 tertiaryColor={this.state.tertiaryColor}
                 secondaryColor={this.state.secondaryColor}
                 // modalToOpen= {this.state.name}
                 open={this.state.modalOpen}
               />
+
+              {/* <StandardModal
+                primaryColor={this.state.primaryColor}
+                tertiaryColor={this.state.tertiaryColor}
+                secondaryColor={this.state.secondaryColor}
+                // modalToOpen= {this.state.name}
+                open={this.state.modalOpen}
+              /> */}
             </Element>
             <Container>
               <Divider style={{color: this.state.secondaryColor, backgroundColor: this.state.secondaryColor}}/>
@@ -376,14 +409,25 @@ class StandardHomePage extends React.Component {
               page
             >
               <div>
-                <iframe src="https://giphy.com/embed/5Z4j3cbEXGrTy"></iframe>
+                <iframe src="https://giphy.com/embed/5Z4j3cbEXGrTy" title="emailSent" style={{color: this.state.secondaryColor, borderColor: this.state.secondaryColor}}></iframe>
               </div><br></br><br></br>
               <Container textAlign="center">
                 <Header as="h3" style={{color: this.state.secondaryColor}}>Your email has been sent. I promise to probably read it!</Header>
               </Container>
             </Dimmer>
+          <Dimmer
+            active={this.state.dimmerError}
+            onClickOutside={this.handleErrorDimmerClose}
+            page
+          >
+            <iframe src="https://giphy.com/embed/ZTans30ONaaIM" title="construction" style={{color: this.state.secondaryColor, borderColor: this.state.secondaryColor}}></iframe>
+            <br></br><br></br>
+            <Container textAlign="center">
+              <Header as="h3" style={{color: this.state.secondaryColor}}>This Page Is Under Construction</Header>
+            </Container>
+          </Dimmer>
             <StandardFooter 
-              height={80}
+              height={130}
               primaryColor={this.state.primaryColor}
               secondaryColor={this.state.secondaryColor}
             />

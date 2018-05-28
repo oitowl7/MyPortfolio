@@ -1,12 +1,11 @@
 import React from 'react';
 import { /* BrowserRouter as Router, Route, Switch, Redirect,*/ Link } from "react-router-dom";
 import { Container, Grid, Image, Header } from 'semantic-ui-react';
-import StandardPortfolioCard from "../StandardPortfolioCard"
 
 const StandardFooter = props => {
   return (
-    <div id="footer">
-      <Container fluid style={{height: props.height, backgroundColor: props.secondaryColor, color: props.primaryColor, marginTop: 40}}> 
+    <div id="footer" style={{height: props.height, backgroundColor: props.secondaryColor, color: props.primaryColor, marginTop: 40, width: "100%"}}>
+      <Container fluid > 
         <Grid verticalAlign="middle">
           <Grid.Row columns={3}>
             <Grid.Column>
